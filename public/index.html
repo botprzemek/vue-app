@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="pl">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>BHIVE.PL</title>
+    <link rel="icon" href="./favicon.ico">
+<!--    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">-->
+    <style>
+      @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local(''),
+            url('./inter-400.woff2') format('woff2');
+      }
+      @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local(''),
+            url('./inter-700.woff2') format('woff2');
+      }
+      * {
+          margin: 0;
+          scroll-behavior: smooth;
+          z-index: 2;
+          font-family: "Inter", sans-serif;
+      }
+    </style>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
   </body>
 </html>

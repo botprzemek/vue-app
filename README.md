@@ -1,24 +1,3 @@
-# vue-login
+# Player Panel with Vue and Firebase
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Minecraft Webapp with panel for players to manage their server's account. Currently, using Vue, Tailwind, PostCSS and Firebase.
