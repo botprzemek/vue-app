@@ -18,7 +18,6 @@ export default {
   name: "NavigationComponent",
   components: {LinksComponent},
 }
-
 </script>
 
 <style scoped>

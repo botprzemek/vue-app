@@ -1,0 +1,22 @@
+<template>
+  <main class="h-[70vh] w-full select-none grid place-items-center">
+    <section id="1" class="w-fit box-border p-[8%] pb-[2%] relative text-center">
+      <h1 class="text-[4.7rem] text-yellow-400 font-bold">Ups! Błąd 404.</h1>
+      <p class="w-full text-xl">Strona, której szukasz, nie istnieje!</p>
+    </section>
+  </main>
+</template>
+
+<script>
+export default {
+  name: "MainComponent",
+  methods: {
+    wait(id) {
+      document.getElementById(id).scrollIntoView({block: "center"});
+    },
+  },
+}
+</script>
+
+<style scoped>
+</style>

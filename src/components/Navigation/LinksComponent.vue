@@ -5,17 +5,16 @@
     </a>
   </li>
   <li class="list-none ml-4 text-neutral-900" v-for="link in links" :key="link.title">
-    <a v-bind:href="link.addr">{{ link.title }}</a>
+    <router-link v-bind:to="link.addr">{{ link.title }}</router-link>
   </li>
 </template>
 
 <script>
-
 export default {
   name: "LinksComponent",
   methods: {
     scroll(id) {
-      document.getElementById(id).scrollIntoView({block: "start"});
+      window.location.pathname !== '/' ? this.$router.push('/') :document.getElementById(id).scrollIntoView({block: "start"});
     },
   },
   props: {
@@ -39,7 +38,7 @@ export default {
         },
         {
           title: 'Discord',
-          addr: 'https://dc.bhive.pl/',
+          addr: '/discord',
         },
         {
           title: 'FAQ',
