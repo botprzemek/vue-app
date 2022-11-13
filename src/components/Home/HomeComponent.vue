@@ -1,5 +1,5 @@
 <template>
-  <main class="h-full w-full select-none">
+  <main class="h-full w-full mb-[8rem] select-none">
     <section id="1" class="w-full box-border p-[8%] pb-[2%] relative">
       <div class="max-w-full h-full box-border gap-4 grid grid-cols-2 items-center">
         <div>
