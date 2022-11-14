@@ -3,13 +3,13 @@
 </template>
 
 <script>
-import MainComponent from "@/components/NotFound/NotFoundComponent";
+import MainComponent from "@/components/Panel/PanelComponent";
 
 export default {
-  name: "NotFoundComponent",
+  name: "PanelComponent",
   components: {
     MainComponent,
-  }
+  },
 }
 </script>
 

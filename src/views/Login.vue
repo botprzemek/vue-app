@@ -6,7 +6,7 @@
 import MainComponent from "@/components/Login/LoginComponent";
 
 export default {
-  name: "HomeComponent",
+  name: "LoginComponent",
   components: {
     MainComponent,
   }

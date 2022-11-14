@@ -3,9 +3,9 @@
     <section id="1" class="w-full box-border p-[8%] pb-[2%] relative">
       <div class="max-w-full h-full box-border gap-4 grid grid-cols-2 items-center">
         <div>
-          <h1 class="text-[4.7rem] text-amber-400 font-bold">Dołącz do naszej społeczności!</h1>
-          <p class="text-[1.1rem] text-justify text-neutral-900">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa eligendi ipsa veritatis! Autem consectetur, culpa eaque et ex fuga incidunt iure, laborum magnam modi officiis placeat recusandae sed vitae!</p>
-          <button @click="scroll(2)" class="scroll text-2xl font-bold mt-4 px-8 py-1 text-white bg-amber-400 border border-amber-400 hover:scale-105 hover:text-transparent hover:bg-clip-text transition rounded-full">Dołącz teraz!</button>
+          <h1 class="text-[4.7rem] text-main font-bold">Dołącz do naszej społeczności!</h1>
+          <p class="text-[1.1rem] text-justify text-background">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa eligendi ipsa veritatis! Autem consectetur, culpa eaque et ex fuga incidunt iure, laborum magnam modi officiis placeat recusandae sed vitae!</p>
+          <button @click="scroll(2)" class="scroll text-2xl font-bold mt-4 px-8 py-1 text-white bg-main border border-main hover:scale-105 hover:text-main hover:bg-transparent transition rounded-full">Dołącz teraz!</button>
         </div>
         <div class="w-full h-full">
 <!--          <img class="object-contain" src="https://www.seekpng.com/png/full/72-727268_clipart-minecraft.png" alt="Postacie z gry Minecraft">-->
@@ -17,11 +17,11 @@
     </section>
     <section id="2" class="w-full box-border pb-[3%] pt-[2%] relative">
       <div class="flex flex-col max-w-full h-full box-border gap-4">
-        <h1 class="text-center w-full text-[2.3rem] font-bold text-neutral-900">Dołącz do <span class="text-amber-400">naszej</span> społeczności</h1>
+        <h1 class="text-center w-full text-[2.3rem] font-bold text-background">Dołącz do <span class="text-main">naszej</span> społeczności</h1>
         <div class="w-full grid justify-center grid-flow-col items-center gap-2 text-2xl">
           <p class="font-bold">IP Serwera:</p>
           <button @click="copy" class="ip relative w-fit rounded-full">
-            <span class="relative z-[3] grid items-center grid-flow-col gap-2 bg-amber-400 text-neutral-900 rounded-full py-1 px-6">
+            <span class="relative z-[3] grid items-center grid-flow-col gap-2 bg-main text-background rounded-full py-1 px-6">
               bhive.pl
 <!--              <i class="transition fill-white text-white bx bxs-copy"></i>-->
             </span>

@@ -3,10 +3,9 @@
 </template>
 
 <script>
-import MainComponent from "@/components/NotFound/NotFoundComponent";
-
+import MainComponent from "@/components/User/UserComponent";
 export default {
-  name: "NotFoundComponent",
+  name: "UserComponent",
   components: {
     MainComponent,
   }
