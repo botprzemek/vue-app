@@ -1,8 +1,6 @@
 <template>
   <li>
-    <a @click="scroll(1)" class="hover:cursor-pointer">
-      <span class="text-2xl font-bold text-main font-bold">{{ title }}</span>
-    </a>
+    <span @click="scroll(1)" class="text-2xl font-bold text-main font-bold hover:cursor-pointer">{{ title }}</span>
   </li>
   <li class="list-none ml-4 text-background" v-for="link in links" :key="link.title">
     <router-link v-bind:to="link.addr">{{ link.title }}</router-link>

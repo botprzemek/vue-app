@@ -23,7 +23,9 @@
           <button @click="copy" class="ip relative w-fit rounded-full">
             <span class="relative z-[3] grid items-center grid-flow-col gap-2 bg-main text-background rounded-full py-1 px-6">
               bhive.pl
-<!--              <i class="transition fill-white text-white bx bxs-copy"></i>-->
+              <i class="transition fill-white text-white w-fit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 text-white" viewBox="0 0 24 24"><path d="M14 8H4c-1.103 0-2 .897-2 2v10c0 1.103.897 2 2 2h10c1.103 0 2-.897 2-2V10c0-1.103-.897-2-2-2z"></path><path d="M20 2H10a2 2 0 0 0-2 2v2h8a2 2 0 0 1 2 2v8h2a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"></path></svg>
+              </i>
             </span>
             <span class="label-copy absolute text-center top-0 h-full grid place-items-center w-full transition opacity-0 transform-gpu">
               <span>Skopiowano</span>

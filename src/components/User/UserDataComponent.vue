@@ -36,21 +36,18 @@ export default {
       console.log(user);
       this.username = await user.username;
       this.email = await user.email;
-      this.balance.zloty = await user.balance.zloty;
-      this.balance.gwiazdki = await user.balance.gwiazdki;
+      //this.balance.zloty = await user.balance.zloty;
+      //this.balance.gwiazdki = await user.balance.gwiazdki;
       this.loaded = true;
-    },
-    getData(user){
-      get(child(databaseRef, `/users/${user}`))
-          .then(async (snapshot) => {
-            if (snapshot.exists()) await this.setter(snapshot.val());
-            else console.log("No data available");
-          })
-          .catch((error) => console.error(error)
-          )},
+    }
   },
-  beforeMount() {
-    this.getData(this.$route.params.id);
+  async created(){
+    await get(child(databaseRef, `/users/${this.$route.params.id}`))
+        .then((snapshot) => {
+          if (snapshot.exists()) this.setter(snapshot.val());
+          else console.log("No data available");
+        })
+        .catch((error) => console.error(error))
   }
 }
 </script>

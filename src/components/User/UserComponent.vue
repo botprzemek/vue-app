@@ -1,15 +1,14 @@
 <template>
-  Essa
-<!--  <UserDataComponent></UserDataComponent>-->
+  <UserDataComponent></UserDataComponent>
 </template>
 
 <script>
-// import { defineAsyncComponent } from "vue";
+import UserDataComponent from "@/components/User/UserDataComponent";
 
 export default {
   name: "UserComponent",
   components: {
-    //UserDataComponent: defineAsyncComponent(()=>{import('./UserDataComponent')}),
+    UserDataComponent,
   },
 }
 </script>

@@ -3,10 +3,8 @@
     <ul class="grid grid-cols-[1fr_repeat(7,_auto)] w-full relative items-center text-base no-underline py-[1%]">
       <LinksComponent title="BHIVE.PL"></LinksComponent>
       <li>
-        <a @click="onLogin">
-          <span v-if="loginState" class="block ml-4 px-4 py-1 text-white border border-main bg-main hover:bg-transparent hover:text-main transition rounded-full hover:scale-105 hover:cursor-pointer">Wyloguj się</span>
-          <span v-else class="block ml-4 px-4 py-1 text-white border border-main bg-main hover:bg-transparent hover:text-main transition rounded-full hover:scale-105 hover:cursor-pointer">Zaloguj się</span>
-        </a>
+        <span @click="onLogin" v-if="loginState" class="block ml-4 px-4 py-1 text-white border border-main bg-main hover:bg-transparent hover:text-main transition rounded-full hover:scale-105 hover:cursor-pointer">Wyloguj się</span>
+        <span @click="onLogin" v-else class="block ml-4 px-4 py-1 text-white border border-main bg-main hover:bg-transparent hover:text-main transition rounded-full hover:scale-105 hover:cursor-pointer">Zaloguj się</span>
       </li>
     </ul>
   </nav>
