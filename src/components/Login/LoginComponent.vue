@@ -22,6 +22,7 @@
 <script>
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from 'firebase/auth'
 import { auth } from '@/firebase/main'
+import setData from '@/firebase/methods/post'
 
 export default {
   name: "LoginComponent",
@@ -41,6 +42,7 @@ export default {
       this.r_loading = true;
       createUserWithEmailAndPassword(auth, this.r_email, this.r_password).then(()=>{
         this.$router.push('/panel');
+        setData(this.r_email);
       }).catch((error)=>{
         console.log(error);
       });

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import MainComponent from "@/components/User/UserComponent";
+import MainComponent from "@/components/Panel/User/UserComponent";
 export default {
   name: "UserComponent",
   components: {

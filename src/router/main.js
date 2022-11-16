@@ -10,7 +10,6 @@ const routes = [
     { path: '/faq', name: 'FAQ', component: ()=>import('@/views/Home'), meta: { title: 'FAQ'}},
     { path: '/login', name: 'Login', component: ()=>import('@/views/Login'), meta: { title: 'Zaloguj się'}},
     { path: '/panel', name: 'Panel', component: ()=>import('@/views/Panel'), meta: { auth: true, title: 'Panel' }},
-    { path: '/u/:id', name: 'User', component: ()=>import('@/views/User'), meta: { title: 'Użytkownik'}},
     { path: '/:pathMatch(.*)*', name: '404',  component: ()=>import('@/views/NotFound'), meta: { title: 'Błąd 404'}},
 ];
 
@@ -22,7 +21,7 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     window.document.title = to.meta.title ? to.meta.title+' | BHIVE.PL' : 'BHIVE.PL';
     if (!to.matched.some(el => el.meta.auth)) return next();
-    onAuthStateChanged(auth, (user)=>{ if (user) return next(); });
+    onAuthStateChanged(auth, user=>{ if (user) return next(); });
 })
 
 router.afterEach(()=>{});
