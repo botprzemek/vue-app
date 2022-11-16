@@ -1,7 +1,7 @@
 <template>
   <main class="w-full h-[80vh] grid place-items-center grid-cols-2">
     <form @submit.prevent="register" class="w-fit grid grid-flow-row">
-      <h1 class="text-[2.3rem] font-bold text-main">Zarejestruj się</h1>
+      <h1 class="text-4xl font-bold text-main">Zarejestruj się</h1>
       <label>Email</label>
       <input class="border border-background rounded-full px-2 py-1" type="email" placeholder="andrew34x@gmail.com" required v-model="r_email">
       <label>Hasło</label>
@@ -9,7 +9,7 @@
       <button class="text-2xl font-bold mt-4 px-8 py-1 text-white bg-main border border-main hover:scale-105 hover:text-main hover:bg-transparent transition rounded-full">Zarejestruj się!</button>
     </form>
     <form @submit.prevent="login" class="w-fit grid grid-flow-row">
-      <h1 class="text-[2.3rem] font-bold text-main">Zaloguj się</h1>
+      <h1 class="text-4xl font-bold text-main">Zaloguj się</h1>
       <label>Email</label>
       <input class="border border-background rounded-full px-2 py-1" type="email" placeholder="andrew34x@gmail.com" required v-model="l_email">
       <label>Hasło</label>
@@ -22,7 +22,7 @@
 <script>
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from 'firebase/auth'
 import { auth } from '@/firebase/main'
-import setData from '@/firebase/methods/post'
+import { addUserData } from '@/firebase/methods/post'
 
 export default {
   name: "LoginComponent",
@@ -42,7 +42,7 @@ export default {
       this.r_loading = true;
       createUserWithEmailAndPassword(auth, this.r_email, this.r_password).then(()=>{
         this.$router.push('/panel');
-        setData(this.r_email);
+        addUserData(this.r_email);
       }).catch((error)=>{
         console.log(error);
       });

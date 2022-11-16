@@ -3,7 +3,7 @@
     <section id="1" class="w-full box-border p-[8%] pb-[2%] relative">
       <div class="max-w-full h-full box-border gap-4 grid grid-cols-2 items-center">
         <div>
-          <h1 class="text-[4.7rem] text-main font-bold">Dołącz do naszej społeczności!</h1>
+          <h1 class="text-7xl text-main font-bold">Dołącz do naszej społeczności!</h1>
           <p class="text-[1.1rem] text-justify text-background">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa eligendi ipsa veritatis! Autem consectetur, culpa eaque et ex fuga incidunt iure, laborum magnam modi officiis placeat recusandae sed vitae!</p>
           <button @click="scroll(2)" class="scroll text-2xl font-bold mt-4 px-8 py-1 text-white bg-main border border-main hover:scale-105 hover:text-main hover:bg-transparent transition rounded-full">Dołącz teraz!</button>
         </div>

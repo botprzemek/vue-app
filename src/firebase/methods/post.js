@@ -1,7 +1,7 @@
-import { ref, set } from 'firebase/database'
+import { ref, set, update } from 'firebase/database'
 import { database } from '@/firebase/main'
 
-export default (email)=>{
+export function addUserData (email){
     email = email.toLocaleLowerCase().replace('.', 'DOT');
     set(ref(database, `users/${email}`), {
         username: '',
@@ -14,4 +14,17 @@ export default (email)=>{
     }).catch((error)=>{
         console.log(error);
     });
+}
+
+export function setUsername (email, username){
+    const updates = {};
+    updates[`/users/${email}/username/`] = username;
+    return update(ref(database), updates);
+    // set(ref(database, `users/${email}`), {
+    //     username: username,
+    // }).then(()=>{
+    //     console.log('Username changed');
+    // }).catch((error)=>{
+    //     console.log(error);
+    // });
 }

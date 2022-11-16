@@ -2,16 +2,11 @@
   <section v-if="loading">
     <LoadingComponent></LoadingComponent>
   </section>
-  <section v-else class="h-[100vh] grid place-items-center">
-    <div class="h-fit w-fit flex flex-col justify-center items-start">
-      <h1><span class="text-main font-bold">Nazwa:</span> {{ user.username }}</h1>
-      <p><span class="text-main font-bold">E-mail:</span> {{ user.email }}</p>
-      <p><span class="text-main font-bold">Saldo:</span> </p>
-      <ul>
-        <li>{{ user.balance.zloty }} <span class="text-main font-bold">PLN</span></li>
-        <li>{{ user.balance.gwiazdki }} <span class="text-main font-bold">Gwiazdek</span></li>
-      </ul>
+  <section v-else class="data h-[100vh] w-full grid place-items-center">
+    <div class="mx-8 p-6 w-[84%] bg-background-1 flex items-center rounded-xl">
+      <h1 class="pl-3 text-4xl text-background font-bold">Witaj <span class="text-main font-bold">{{ user.username }}!</span></h1>
     </div>
+    <SetUsername v-if="!this.setUsername" :email="email"></SetUsername>
   </section>
 </template>
 
@@ -20,13 +15,19 @@ import firebaseFetch from "@/firebase/methods/get"
 import {onAuthStateChanged} from "firebase/auth"
 import {auth} from "@/firebase/main"
 import LoadingComponent from '@/components/Loading/LoadingComponent'
+import SetUsername from "@/components/Panel/User/SetUsername";
 
 export default {
   name: 'UserDataComponent',
-  components: {LoadingComponent},
+  components: {
+    LoadingComponent,
+    SetUsername,
+  },
   data() {
     return {
       loading: false,
+      setUsername: false,
+      email: null,
       user: {
         username: null,
         email: null,
@@ -40,20 +41,23 @@ export default {
   methods: {
     fetchName(email) {
       firebaseFetch(email, (user)=>{
-        this.user.username = (user.username === null) ? user.username : 'Brak';
+        this.user.username = (user.username !== null) ? user.username : null;
         this.user.email = email.replace('DOT', '.');
         this.user.balance.zloty = user.balance.zloty;
         this.user.balance.gwiazdki = user.balance.gwiazdki;
+        this.email = email;
         this.loading = false;
+        if (this.user.username) this.setUsername = true;
+        console.table(this.user);
       });
-    }
+    },
   },
   created() {
-    onAuthStateChanged(auth, user =>this.fetchName(user.email.toLocaleLowerCase().replace('.', 'DOT')));
+    onAuthStateChanged(auth, user =>{
+      this.fetchName(user.email.toLocaleLowerCase().replace('.', 'DOT'));
+    });
   },
-  beforeMount() {
-    this.loading = true;
-  }
+  beforeMount(){ this.loading = true }
 }
 
 </script>
