@@ -21,7 +21,10 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
     window.document.title = to.meta.title ? to.meta.title+' | BHIVE.PL' : 'BHIVE.PL';
     if (!to.matched.some(el => el.meta.auth)) return next();
-    onAuthStateChanged(auth, user=>{ if (user) return next(); });
+    onAuthStateChanged(auth, user=>{
+        if (from.name !== 'login' && !user) return next('/login');
+        if (user) return next();
+    });
 })
 
 router.afterEach(()=>{});
