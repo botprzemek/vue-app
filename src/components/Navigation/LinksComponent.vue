@@ -1,8 +1,8 @@
 <template>
-  <li>
-    <span @click="scroll(1)" class="text-2xl font-bold text-main font-bold hover:cursor-pointer">{{ title }}</span>
+  <li class="h-full">
+    <img class="h-16 hover:cursor-pointer" src="./Logo.svg" @click="scroll(1)">
   </li>
-  <li class="list-none ml-4 text-background" v-for="link in links" :key="link.title">
+  <li class="transform-gpu transition list-none ml-4 text-background hover:text-main hover:scale-105" v-for="link in links" :key="link.title">
     <router-link v-bind:to="link.addr">{{ link.title }}</router-link>
   </li>
 </template>
@@ -12,7 +12,7 @@ export default {
   name: "LinksComponent",
   methods: {
     scroll(id) {
-      window.location.pathname !== '/' ? this.$router.push('/') : document.getElementById(id).scrollIntoView({block: "start"});
+      window.location.pathname !== '/' ? this.$router.push('/') : document.getElementById(id).scrollIntoView({block: "start", behavior: "smooth"});
     },
   },
   props: {

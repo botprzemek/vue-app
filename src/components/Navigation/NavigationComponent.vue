@@ -1,5 +1,5 @@
 <template>
-  <nav class="z-50 fixed w-full min-h-[8%] grid items-center box-border select-none bg-white shadow-[0_15px_10px_-15px_rgba(0,0,0,0.04)] px-[8%]">
+  <nav class="z-50 fixed w-full min-h-[8%] grid items-center box-border select-none bg-white shadow-[0_15px_10px_-15px_rgba(0,0,0,0.04)] px-[8%] scroll-smooth">
     <ul class="grid grid-cols-[1fr_repeat(7,_auto)] w-full relative items-center text-base no-underline py-[1%]">
       <LinksComponent title="BHIVE.PL"></LinksComponent>
       <li>

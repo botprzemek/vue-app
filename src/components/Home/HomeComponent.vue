@@ -8,6 +8,7 @@
           <button @click="scroll(2)" class="scroll text-2xl font-bold mt-4 px-8 py-1 text-white bg-main border-2 border-main hover:scale-105 hover:text-main hover:bg-transparent transition rounded-full">Dołącz teraz!</button>
         </div>
         <div class="w-full h-full">
+          <img class="object-contain" src="./Logo.svg" alt="Postacie z gry Minecraft">
 <!--          <img class="object-contain" src="https://www.seekpng.com/png/full/72-727268_clipart-minecraft.png" alt="Postacie z gry Minecraft">-->
         </div>
       </div>
@@ -67,7 +68,7 @@ export default {
   },
   methods: {
     scroll(id) {
-      document.getElementById(id).scrollIntoView({block: "center"});
+      document.getElementById(id).scrollIntoView({block: "center", behavior: "smooth"});
     },
     copy() {
       const clip = document.createElement("textarea"),

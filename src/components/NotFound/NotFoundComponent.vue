@@ -8,13 +8,20 @@
 </template>
 
 <script>
+import fetch from '@/methods/test_get'
+
 export default {
   name: "MainComponent",
   methods: {
-    wait(id) {
-      document.getElementById(id).scrollIntoView({block: "center"});
+    fetchData() {
+      fetch((data)=>{
+        console.log(data);
+      });
     },
   },
+  beforeMount() {
+    this.fetchData();
+  }
 }
 </script>
 

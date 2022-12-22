@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import firebaseFetch from "@/firebase/methods/get"
+  import firebaseFetch from "@/firebase/methods/get"
 import {onAuthStateChanged} from "firebase/auth"
 import {auth} from "@/firebase/main"
 import LoadingComponent from '@/components/Loading/LoadingComponent'
@@ -52,8 +52,9 @@ export default {
       });
     },
   },
-  created() {
+  beforeCreate() {
     onAuthStateChanged(auth, user =>{
+      console.log(user);
       this.fetchName(user.email.toLocaleLowerCase().replace('.', 'DOT'));
     });
   },
